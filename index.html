@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Revisão</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+.sidebar {
+    background-color: #2c3e50; /* Cor de fundo da barra lateral */
+    color: #ecf0f1; /* Cor do texto na barra lateral */
+    padding: 20px;
+    width: 10%; /* Largura da barra lateral */
+    height: 700px; /* Altura desejada da barra lateral */
+    transition: width 0.3s; /* Animação da largura */
+    overflow: hidden;
+}
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: background-color 0.3s; /* Animação da cor de fundo ao passar o mouse */
+        }
+
+        .sidebar a:hover {
+            background-color: #34495e; /* Cor de fundo ao passar o mouse */
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%; /* Largura do conteúdo */
+            transition: width 0.3s; /* Animação da largura */
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 300px; /* Ajuste a largura conforme necessário */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        select,
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db; /* Cor de fundo do botão */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s; /* Animação da cor de fundo ao passar o mouse */
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Cor de fundo do botão ao passar o mouse */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>Barra Lateral</h2>
+        <a href="planner.php">Planner Semanal</a>
+        <a href="agendamento.revisao.html">Agendar Revisões</a>
+    </div>
+
+    <div class="content">
+<form id="agendamentoForm" method="post" action="processa_agendamento.php">
+    <label for="disciplina">Disciplina:</label>
+    <select id="disciplina" name="disciplina_nome" required>
+        <option value="Artes">Artes</option>
+        <option value="Biologia">Biologia</option>
+        <option value="EducaçãoFisica">Educação Física</option>
+        <option value="Espanhol">Espanhol</option>
+        <option value="Filosofia">Filosofia</option>
+        <option value="Fisica">Física</option>
+        <option value="Geografia">Geografia</option>
+        <option value="Historia">História</option>
+        <option value="Ingles">Inglês</option>
+        <option value="Matematica">Matemática</option>
+        <option value="Portugues">Português</option>
+        <option value="Quimica">Química</option>
+        <option value="Sociologia">Sociologia</option>
+    </select>
+
+
+            <label for="data">Data em que estudou o conteúdo:</label>
+            <input type="date" id="data" name="data_estudo" required>
+
+            <label for="conteudo">Conteúdo estudado:</label>
+            <input type="text" id="conteudo" name="conteudo_estudado" required>
+
+            <label for="descricao">Descrição do estudo:</label>
+            <textarea id="descricao" name="descricao_estudo" rows="4" required></textarea>
+
+            <button type="submit">Agendar Revisão</button>
+        </form>
+    </div>
+
+    <script>
+        // Adicione seu script JavaScript aqui, se necessário
+    </script>
+
+</body>
+
+</html>
